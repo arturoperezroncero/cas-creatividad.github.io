@@ -93,6 +93,19 @@ body {
 
 
 
+.button4 {
+  background-color: black; 
+  color: white; 
+  border: 3px solid #b45c5c;
+}
+
+.button4:hover {
+  background-color: #b45c5c;
+  color: white;
+}
+
+
+
 .sidebar {
   height: 100%;
   width: 0;
@@ -295,6 +308,7 @@ span g { font-size: 250px;}
   <button class="button button1 disabled" onclick="window.location.href = 'https://arturoperezroncero.github.io/cas-creatividad.github.io/';">Creatividad</button>
   <button class="button button2" onclick="window.location.href = 'https://arturoperezroncero.github.io/cas-actividad.github.io/';">Actividad</button>
   <button class="button button3" onclick="window.location.href = 'https://arturoperezroncero.github.io/cas-servicio.github.io/';">Servicio</button>
+  <button class="button button4" onclick="window.location.href = 'https://arturoperezroncero.github.io/cas-proyecto.github.io/';">Proyecto</button>
 
 
 </div>
@@ -316,103 +330,110 @@ function closeNav() {
   <div class="side">
   </div>
   <div class="main" style="background-color:#e8f0fc;">
-    <h2 id="anchor1"></h1>
-    <h1><big><big><big>Scientific Software</big></big></big></h1>
-    <h2><big>Interplanetary Superhighway</big></h2>
+    <h2 id="anchor1"></h2>
+    <h2><big><big><big><big>Desarrollo de Software Científico</big></big></big></big></h2>
+    Entre los muchos proyectos de software científico que he realizado durante los 2 últimos años, he recopilado los más destacables:
+    <h2>Simuladores de potencial efectivo</h2>
     <div style="text-align:center;">
     <img src="lagrangianos.png" alt="Lagrangian Points" width="100%">
     </div>
-    <h3>What is it?</h3>
-    <p>The Interplanetary Superhighway (IPS) is a set of pathways beetween planets and other bodies which require very little energy to pass through. They are delimited by the manifold created by every asymptotic trajectory which ends up in a halo orbit around one of the orbits. The Lagrangian points, the points where an object will maintain its position relative to other two much bigger objects, determine the gates beetween the pathways collected in the IPS. This is no coincidence, as halo orbits always have as centre of their trajectories the Lagrangian points L1 or L2.</p>
-    <h3>How to find it</h3>
-    <p>In order to calculate the IPS I first created a plane, where I placed the Earth (Blue sphere) and the Sun (Yellow sphere). I then recreated the three-body problem, or in other words, simulated the behaviour of the Sun, Earth and a third object. By assuming this third object had a negligible mass orbiting the sun at an angular velocity equal to Earth’s, and then changing its position to every possible point in the plane, I was able to graph the effective potential on said plane (white equipotential lines). This showed me the “gates” between planets, or Lagrangian points as I said earlier.</p>
-    <p>For a better understanding of the Lagrangian points, I placed 5 objects (Green spheres) on each of the points. Its trajectories are showed in red. The Lagrangian points L1 and L2 (the ones closest to the Earth) resulted in much more unstable trajectories around both the Sun and the Earth than the points L3, L4 and L5. However, although a bit calmer, the orbits of objects placed on L3 were still more unstable than those on L4 and L5.</p>
-    <p>My research on the topic is still in progress, but I will make sure to update my latest findings.</p>
     <br>
-    
-    <h2><big>The Millennium Run</big></h2>
-    <h3>What is it?</h3>
+    Leyendo sobre los puntos de Lagrange, me topé con una imagen muy similar a esta en la que se me mostraba el potencial efectivo de un sistema con el fin de poder calcular los puntos de Lagrange de un sistema dado. Cautivado por la simpleza con la que se mostraba algo tan aparentemente complejo como pueden ser los puntos de Lagrange, decidí darle una oportunidad yo mismo e intentar programarlo por mi cuenta. Simulando un sistema con 3 cuerpos, y las interacciones gravitatorias entre ellos, fui capaz de desarrollar este simulador del potencial efectivo (energía cinética sumado a la fuerza centrífuga de un objeto, en un sistema no-inercial). Este proyecto me fue muy útil más adelante, y fue un factor crítico a la hora de trabajar en mi monografía, pues marcó las bases sobre las que construí el resto de software necesario para completarla con éxito, todo basado en este primer proyecto.
+    <h2>The Millenium Run</h2>
+    A su vez, para poder realizar el proyecto anterior hice uso de otro anterior. Se trata de un simulador de n-cuerpos, capaz de simular el comportamiento de una cantidad indefinida de objetos que interactúan únicamente entre sí mediante la atracción gravitatoria. Me basé en la mítica "Millenium Run", ua simulación científica de hace unos años que pretendió hacer lo mismo:
+    <br><br>
+
     <div style="text-align:center;">
-    <video width="100%" controls>
+    <video width="60%" controls>
     <source src="MR.mp4" type="video/mp4">
     </video>
     </div>
-    <p>The so called "Millennium Run" was a computer N-body simulation (a simulation of the behaviour of "N" particles under the influence of a certain force). Its goal was to find out how the universe evolved with time. Its results reinforced the Big Bang theory, closely resembling the Cosmological Background Radiation (CBR).</p>
-    <h3>How to make it</h3>
-    <p>I first tried simulating it using After Effects, which has a built in gravitational simulation. By modifying the default parameters and colors, I ended up with similar results.</p>
-    <p>I then decided to code the whole myself, and procedeed to write a gravitational simulator from scratch (Video on the right). I used 20,000 particles, instead of the over 13 billion the latest Millennium Run did, so my computer wouldn't collapse into a singularity. Still, the results were similar. At the very beginning we see a structure similar to that in the CBR, which later becomes a sort of net connecting big chunks of particles (like in the Millennium Run). Lastly, all the particles join in very big blobs, a possible future for our own universe.</p>
-    <p>I developed a 3D version too.</p>
-
-    <video width="45%" controls>
+    <br>
+    Estos son los resultados que obtuve utilizando 2 métodos diferentes:
+    <br><br>
+    <video width="49.8%" controls>
     <source src="2.mp4" type="video/mp4">
     </video>
-    <video width="45%" controls>
+    <video width="49.8%" controls>
     <source src="3.mp4" type="video/mp4">
     </video>
 
-    <h2><big>Electromagnetic simulators</big></h2>
-    <h3>Electric force simulator</h3>
-    <p>I started with the basics, simulating the Coulomb force, and then plotting it onto a plane. I then simulated different experiments: two positive charges approaching (on the left), or one positive and one negative (on the right).</p>
 
-    <video width="45%" controls>
+
+
+    <h2>Simuladores electromagnéticos</h2>
+    Otro de los proyectos que he realizado este año es un simulador de campos electromagnéticos. A continuación se ve la interacción entre dos monopolos eléctricos de signos iguales, y otro con monopolos de signos opuestos.
+    <br><br>
+    <video width="49.8%" controls>
     <source src="a.mp4" type="video/mp4">
     </video>
-    <video width="45%" controls>
+    <video width="49.8%" controls>
     <source src="b.mp4" type="video/mp4">
     </video>
+    <br><br>
+    También desarrollé un programa que trazaba las líneas de campo:
+    <br><br>
 
-    <p>I developed a field line plotter too.</p>
+
 
     <div style="text-align:center;">
-    <img src="lines.png" alt="Field lines" width="100%">
+    <img src="lines.png" alt="Field lines" width="60%">
     </div>
-
-    <p>Finally, I tried plotting the equipotential lines of two colliding dipoles.</p>
-
-    <video width="49%" controls>
+    <br>
+    A continuación se ven las interacción entre 2 dipolos magnéticos:
+    <br><br>
+    <video width="49.8%" controls>
     <source src="c.mp4" type="video/mp4">
     </video>
-    <video width="49%" controls>
+    <video width="49.8%" controls>
     <source src="d.mp4" type="video/mp4">
     </video>
 
-    <h3>Lorentz force simulator</h3>
-    <p>I became more and more interested in magnetism, after learning that it was, in fact, a relativistic consequence of the movement of charges. Trying to understand it, I coded a program which simulated the behaviour of particles (both positive and negative) approaching a magnetic dipole. The charge of the particles is randomly assigned, and the dipole is represented as a blues sphere, trying to mimic solar winds hitting Earth. The camera is rotating around Earth along one of its meridians.</p>
 
+    <br><br>
+    Y por último, una simulación del comportamiento de partículas cargadas entrando en un campo electromagnético. La representación gráfica está pensada para evocar a las partículas cargadas provenientes del viento solar entrando en el campo magnético de la Tierra.
+    <br><br>
     <div style="text-align:center;">
-    <video width="100%" controls>
+    <video width="60%" controls>
     <source src="e.mp4" type="video/mp4">
     </video>
     </div>
 
-    <h3>Clifford Attractor</h3>
-    <p>After finding out about attractors, I became more and more interested on differential equations. It doesn't matter if you believe in adeterministic or in a indeterministic universe, chaos theory contributes to everybody's view of reality, and so it did to me. I started studying and messing with it on my own, beginning with the Clifford attractor.</p>
-    <p>As Paul Bourke explains on this website: <a href="http://paulbourke.net/fractals/clifford/">http://paulbourke.net/fractals/clifford/</a>, the Clifford attractor, named after Clifford Pickover, is described by the following set of differential equations:</p>
-    <p>xn+1 = sin(a yn) + c cos(a xn)</p>
-    <p>yn+1 = sin(b xn) + d cos(b yn)</p>
-    <p>Where a, b, c, d are variables that define each attractor. </p>
-    <p>I then coded a simulator, which returned results as the following:</p>
+
+
+
+    <h2>Atractores y el Conjunto de Mandelbrot</h2>
+    Otro campo de interés que estudié por mi cuenta utilizando el desarrollo de software es el de la Teoría del Caos. Estos ejemplos a continuación los usé más adelante como estímulo para mi trabajo de investigación individual de matemáticas. Simulando sistemas de ecuaciones fui capaz de obtener atractores como los siguientes:
+    <br><br>
+
     <div style="text-align:center;">
     <img src="clif.png" alt="Clifford Attractor" width="100%">
     </div>
 
-    <h3>Lorenz Attractor</h3>
-    <p>The Lorenz Attractor is a system of 3 partial differential equations, developed by Edward Lorenz in the 20th century. It defines the properties of a two-dimensional fluid uniformly heated from below and cooled from above. It is perhaps the most famous example of deterministic chaos, and it was not long before I got my hands on it. Here are the results:</p>
+    
+
+
+
     <div style="text-align:center;">
     <img src="lor.png" alt="Clifford Attractor" width="100%">
     </div>
 
-    <h3>Mandelbrot Set</h3>
-    <p>I also tried simulating the Mandelbrot Set. If we iterate f(z)=z^2+c, the first term being a complex number equivalent to the coordinates in a 2-D plane, the resulting progression will converge or diverge. If we then colour the pixels which result in converging progressions, and them zoom on it as much as our non-super computer allows us, we will get something like this:</p>
+    <br>
+    Y mediante la iteración de una ecaución dada, y estudiando posteriormente su convergencia dependiendo de los valores de un número complejo determinado, puede obtener la siguiente simulación:
+    <br><br>
     <div style="text-align:center;">
-    <video width="100%" controls>
+    <video width="60%" controls>
     <source src="Mandelbrot.mp4" type="video/mp4">
     </video>
     </div>
 
-    <h3>Stellar Evolution</h3>
-    <p>A long, long time ago, in this galaxy, I decided to develop an app explaining the different paths a star could take depending on its mass. This was my first big project, and it took me months to finish. I was around 13, and was still learning programming, so don't expect too much. The app is still up on Google Play, and you can download it 
-    <a href="https://play.google.com/store/apps/details?id=stellar.evolution&hl=es_419">here</a>. In case you don't want to, here are some snapshots and the trailer:</p>
+
+
+    <h2><big><big><big><big>Desarrollo de Videojuegos</big></big></big></big></h2>
+    A lo largo de los últimos años, he desarrollado una variedad de videojuegos, y otros programas, que he ido publicando en la Play Store. Uno de ellos es especialmente destacable, y lo incluiré en mi CAS como mi proyecto. El resto están incluidos a continuación.
+
+    <h2>Stellar Evolution</h2>
+    Decidí desarrollar una aplicación que fuese capaz de representar de forma sencilla y didáctica la evolución de diferentes tipos de estrellas dependiendo de su masa. El resultado fue bastante satisfactorio, y ha tenido unas 500 descargas. Se puede encontrar <a href="https://play.google.com/store/apps/details?id=stellar.evolution&hl=es_419">aquí</a>. Aquí hay algunas capturas de la aplicación, y el tráiler que hice para su publicación:<br><br><br>
 
     <img src="captura1.png" alt="captura1" width="32%">
     <img src="captura2.png" alt="captura2" width="32%">
@@ -422,10 +443,47 @@ function closeNav() {
     <img src="captura6.png" alt="captura6" width="32%">
 
     <div style="text-align:center;">
-    <video width="100%" controls>
+    <video width="60%" controls>
     <source src="trailer.mp4" type="video/mp4">
     </video>
     </div>
+
+
+    <h2>Evolution</h2>
+    <p>También desarrollé un juego tipo arcade en el que juegas como distintos animales que van evolucionando acorde con el progreso real que hubo en la Tierra (de dinosaurio a pájaro, etc...). El juego se puede encontrar <a href="https://play.google.com/store/apps/details?id=evolution.arturo">aquí</a>.</p>
+    <div style="text-align:center;">
+    <video width="60%" controls>
+    <source src="Evolution.mp4" type="video/mp4">
+    </video>
+    </div>
+
+    <big>Kill Sebas</big>
+    <p>The name speaks for itself.</p>
+    <div style="text-align:center;">
+    <video width="60%" controls>
+    <source src="KillSebas.mp4" type="video/mp4">
+    </video>
+    </div>
+    <p>It is currently available on <a href="https://play.google.com/store/apps/details?id=kill.sebas">Play Store.</a></p>
+
+
+
+    <h2><big><big><big><big>Arte Computacional</big></big></big></big></h2>
+    <h2><big><big><big><big>Taller de Astronomía</big></big></big></big></h2>
+    <h2><big><big><big><big>Taller de Telecomunicaciones</big></big></big></big></h2>
+    <h2><big><big><big><big>Batería</big></big></big></big></h2>
+    <h2><big><big><big><big>Taller de Programación</big></big></big></big></h2>
+    <h2><big><big><big><big>HP Codewars</big></big></big></big></h2>
+    <h2><big><big><big><big>Maezmun</big></big></big></big></h2>
+    <h2><big><big><big><big>PEAC</big></big></big></big></h2>
+    <h2><big><big><big><big>"Desarrollo" de Música</big></big></big></big></h2>
+
+
+
+
+
+
+
 
 
     <h2 id="anchor2"></h1>
@@ -454,23 +512,7 @@ function closeNav() {
     <img src="app8.png" alt="7" width="32%">
     <img src="app10.png" alt="8" width="32%">
 
-    <h2><big>Evolution</big></h2>
-    <p>I had this idea of doing a game where you started playing as some species, and slowlly evolved into others, ending up in existing animals nowadays. That is basically what I ended up doing. In "Evolution" you can play as dinasaurs, seagulls, and worst of all: humans.</p>
-    <div style="text-align:center;">
-    <video width="100%" controls>
-    <source src="Evolution.mp4" type="video/mp4">
-    </video>
-    </div>
-    <p>It is currently available on <a href="https://play.google.com/store/apps/details?id=evolution.arturo">Play Store.</a></p>
-
-    <h2><big>Kill Sebas</big></h2>
-    <p>The name speaks for itself.</p>
-    <div style="text-align:center;">
-    <video width="100%" controls>
-    <source src="KillSebas.mp4" type="video/mp4">
-    </video>
-    </div>
-    <p>It is currently available on <a href="https://play.google.com/store/apps/details?id=kill.sebas">Play Store.</a></p>
+    
 
     <h2 id="anchor3"></h1>
     <h1><big><big><big>Science Fiction</big></big></big></h1>
